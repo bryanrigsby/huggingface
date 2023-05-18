@@ -9,11 +9,15 @@ const HF_ACCESS_TOKEN = process.env.HF_ACCESS_TOKEN;
 
 const hf = new HfInference(HF_ACCESS_TOKEN);
 
-const model = "t5-base";
+const model = "microsoft/DialoGPT-large";
 
-const inputs = "I like tacos and I live in Berlin."; 
+const inputs = {
+    past_user_inputs: ['Which movie is the best ?'],
+    // generated_responses: ['It is Die Hard for sure.'],
+    text: 'Can you explain in detail why ?'
+}
 
-const result = await hf.translation({
+const result = await hf.conversational({
     model: model,
     inputs: inputs,
   })
