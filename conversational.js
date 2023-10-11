@@ -12,14 +12,13 @@ const hf = new HfInference(HF_ACCESS_TOKEN);
 const model = "microsoft/DialoGPT-large";
 
 const inputs = {
-    past_user_inputs: ['Which movie is the best ?'],
-    // generated_responses: ['It is Die Hard for sure.'],
-    text: 'Can you explain in detail why ?'
+    text: 'Pretend you are a cat. Respond with a phrase a happy cat might say.'
 }
 
 const result = await hf.conversational({
     model: model,
     inputs: inputs,
+    num_return_sequences: 5
   })
 
 console.log(result)

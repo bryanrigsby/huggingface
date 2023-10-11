@@ -1,4 +1,4 @@
-//translates to german and other languages, but dont know how to select other languages yet
+//classify text into different categories or labels.
 
 import { HfInference } from "@huggingface/inference";
 import dotenv from "dotenv";
